@@ -1,7 +1,6 @@
 @use '../../lib/service.scss' as s;
 
 .header {
-  @extend .section;
   flex-direction: column;
   background-color: s.color('backgroundDark');
 }
@@ -10,7 +9,7 @@
   @extend .section_content;
 
   display: flex;
-  padding: s.space(4) 0;
+  padding: s.space(4);
   justify-content: space-between;
 }
 
@@ -35,24 +34,18 @@
 }
 
 .ad {
-  padding: 0px;
-  gap: 10px;
-
-  width: 100%;
-
   background-color: s.color('whiteLight');
 }
 
 .ad_content {
   display: flex;
-  padding: s.space(4) 0;
+  padding: s.space(4);
   justify-content: space-between;
 }
 
-.ad_block {
-  display: flex;
-  gap: s.space(8);
-  align-items: center;
+.ad_link {
+  @include s.linkAction;
+  margin-right: 318px;
 }
 
 .product_content {
@@ -154,8 +147,13 @@
 $productImage: (
   'iphone-pro' '/img/iphone_pro.png' #000,
   'iphone' '/img/iphone.png' #fafafa,
+  'iwatch' '/img/iwatch.png' #000,
   'trade-in' '/img/trade_in.png' #fbfbfd,
-  'conference' '/img/conference.png' #000
+  'conference' '/img/conference.png' #000,
+  'ipad' '/img/ipad.png' #fbfbfd,
+  'small_business' '/img/small_business.png' #000,
+  'gift' '/img/gift.png' #fbfbfd,
+  'card' '/img/card.png' #fbfbfd
 );
 
 @each $class, $url, $color in $productImage {
@@ -173,4 +171,83 @@ $productImage: (
   .product_description {
     font-size: 20px;
   }
+}
+
+.small_business_title {
+  width: 276px;
+  height: 104px;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 150%;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+}
+
+.small_business_description {
+  width: 258px;
+  height: 20px;
+
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  background: #f5f5f7;
+}
+
+.footer_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 39px 0px;
+  gap: 10px;
+
+  width: 1200px;
+  height: 262px;
+}
+
+.footer_block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  width: 1200px;
+  height: 184px;
+}
+
+.footer_title {
+  width: 84px;
+  height: 12px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  color: #1d1d1f;
+}
+
+.footer_link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
 }
